@@ -11,6 +11,7 @@ import passport from "passport";
 import cookiSession from "cookie-session";
 import authRoute from "./routes/auth.js";
 import goalRoutes from "./routes/goalRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import { errorHandler } from "./middleware/errorMiddleware.js";
 const options = {
   key: fs.readFileSync("./key.pem"),
@@ -48,6 +49,7 @@ app.get("/home", cors(), async (req, res) => {
   res.send({ name: "Ali", age: 54 });
 });
 app.use("/api/goals", goalRoutes);
+app.use("/api/users", userRoutes);
 const server = https.createServer(options, app);
 server.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

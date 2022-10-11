@@ -99,10 +99,11 @@
 }
 
 .login {
-  height: calc(100vh - 50px);
+  height: calc(100vh);
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: -25px;
 }
 
 .wrapper {
